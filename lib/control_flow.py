@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def admin_login(username, password):
-    if username == "admin" and password == "12345":
+    if (username == "admin" or username == "ADMIN") and password == "12345":
         return "Access granted"
     else:
         return "Access denied"
@@ -30,5 +30,15 @@ def fizzbuzz(num):
     pass
 
 def calculator(operation, num1, num2):
-    # your code here
+   operations ={
+       "+": num1 + num2,
+       "-": num1 - num2,
+         "*": num1 * num2,
+            "/": num1 / num2 if num2 != 0 else None
+   }
+   if operation in operations:
+       return operations[operation]
+   else:
+    print("Invalid operation!")
+    return None
     pass
